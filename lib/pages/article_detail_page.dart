@@ -15,41 +15,51 @@ class ArticleDetailPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Hero(
-              tag: article.urlToImage,
-              child: Image.network(article.urlToImage),
-            ),
+            article.urlToImage == null
+                ? Container(
+                    height: 200,
+                    child: Icon(Icons.error),
+                  )
+                : Hero(
+                    tag: article.urlToImage,
+                    child: Image.network(article.urlToImage),
+                  ),
             Padding(
               padding: EdgeInsets.all(10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(article.description),
+                  Text(
+                    article.description ?? "",
+                    style: Theme.of(context).textTheme.bodyText2,
+                  ),
                   Divider(
                     color: Colors.grey,
                   ),
                   Text(
-                    article.title,
-                    style: TextStyle(
-                      fontSize: 24.0,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                    ),
+                    article.title ?? "",
+                    style: Theme.of(context).textTheme.headline6,
                   ),
                   Divider(
                     color: Colors.grey,
                   ),
-                  Text('Date: ${article.publishedAt}'),
+                  Text(
+                    'Date: ${article.publishedAt}',
+                    style: Theme.of(context).textTheme.caption,
+                  ),
                   SizedBox(
                     height: 10,
                   ),
-                  Text('Author: ${article.author}'),
+                  Text(
+                    'Author: ${article.author}',
+                    style: Theme.of(context).textTheme.caption,
+                  ),
                   Divider(
                     color: Colors.grey,
                   ),
                   Text(
-                    article.content,
-                    style: TextStyle(fontSize: 16.0),
+                    article.content ?? "",
+                    style: Theme.of(context).textTheme.bodyText1,
                   ),
                   SizedBox(
                     height: 10,

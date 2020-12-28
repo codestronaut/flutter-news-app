@@ -19,6 +19,10 @@ class MyApp extends StatelessWidget {
         textTheme: myTextTheme,
         primarySwatch: Colors.blueGrey,
         scaffoldBackgroundColor: Colors.white,
+        appBarTheme: AppBarTheme(
+          textTheme: myTextTheme.apply(bodyColor: Colors.black),
+          elevation: 0,
+        ),
         buttonTheme: ButtonThemeData(
           buttonColor: secondaryColor,
           textTheme: ButtonTextTheme.primary,
@@ -28,12 +32,16 @@ class MyApp extends StatelessWidget {
             ),
           ),
         ),
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          selectedItemColor: secondaryColor,
+          unselectedItemColor: Colors.grey,
+        ),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: NewsListPage.routeName,
+      initialRoute: HomePage.routeName,
       routes: {
-        NewsListPage.routeName: (context) => NewsListPage(),
+        HomePage.routeName: (context) => HomePage(),
         ArticleDetailPage.routeName: (context) => ArticleDetailPage(
               article: ModalRoute.of(context).settings.arguments,
             ),
