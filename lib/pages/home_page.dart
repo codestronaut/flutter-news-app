@@ -12,7 +12,12 @@ class _HomePageState extends State<HomePage> {
   static const String _headlineText = 'Headline';
 
   List<Widget> _listWidget = [
-    ArticleListPage(),
+    ChangeNotifierProvider<NewsProvider>(
+      create: (_) => NewsProvider(
+        apiService: ApiService(),
+      ),
+      child: ArticleListPage(),
+    ),
     SettingsPage(),
   ];
 
