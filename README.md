@@ -2,6 +2,8 @@
 
 A new Flutter project.
 
+![Preview](https://raw.githubusercontent.com/codestronaut/flutter-news-app/main/fmp.png)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
