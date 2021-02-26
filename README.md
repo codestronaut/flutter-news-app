@@ -1,6 +1,4 @@
-# news_app
-
-A new Flutter project.
+# Flutter News App
 
 ![Preview](https://raw.githubusercontent.com/codestronaut/flutter-news-app/main/fmp.png)
 
